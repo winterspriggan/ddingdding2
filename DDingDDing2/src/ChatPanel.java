@@ -7,11 +7,12 @@ public class ChatPanel extends JPanel {
 
     public ChatPanel() {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        JScrollPane jScrollPane = new JScrollPane();
-        this.add(jScrollPane);
         jTextArea = new JTextArea();
         jTextArea.setBackground(Color.GRAY);
-        this.add(jTextArea);
+        JScrollPane jScrollPane = new JScrollPane(jTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+//        jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        jTextArea.setEditable(false);
+        this.add(jScrollPane);
     }
     public void setTextArea(String t) {
         jTextArea.append(t+"\n");
