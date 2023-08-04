@@ -3,6 +3,5 @@ public class Main {
         MainFrame mainfFrame  = new MainFrame();
         mainfFrame.setVisible(true);
 
-
     }
 }
