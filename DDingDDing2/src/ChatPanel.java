@@ -3,14 +3,18 @@ import java.awt.*;
 
 public class ChatPanel extends JPanel {
     JLabel jLabel;
+    JTextArea jTextArea;
 
     public ChatPanel() {
-        GridLayout gridLayout = new GridLayout();
-        this.setLayout(gridLayout);
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        JScrollPane jScrollPane = new JScrollPane();
+        this.add(jScrollPane);
+        jTextArea = new JTextArea();
+        jTextArea.setBackground(Color.GRAY);
+        this.add(jTextArea);
     }
-    public void setLabel(String t) {
-        JLabel newLabel = new JLabel(t);
-        this.add(newLabel);
+    public void setTextArea(String t) {
+        jTextArea.append(t+"\n");
     }
 
 }
